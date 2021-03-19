@@ -28,6 +28,7 @@ const app = new Vue({
         return
       }
       const item = {
+        id: Math.random().toString(32).substring(2),
         todo: this.newItem,
         isDone: false,
         edit: false
@@ -35,9 +36,9 @@ const app = new Vue({
       this.items.push(item)
       this.newItem = ''
     },
-    deleteItem: function (index) {
+    deleteItem: function (id) {
       if (confirm('削除しますか？')) {
-        this.items.splice(index, 1)
+        this.items = this.items.filter(item => item.id !== id)
       }
     },
     selectDelete: function () {
