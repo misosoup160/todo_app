@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TodoList</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app" class="container">
+    <h1>
+      ToDoリスト
+      <button @click="selectDelete">一括削除</button>
+    </h1>
+
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="登録">
+    </form>
+
+    <ul>
+      <li v-for='(item, index) in items'>
+        <input type="checkbox" v-model="item.isDone">
+        <span v-if="!item.edit" :class="{done: item.isDone}" @click="item.edit = true">
+          {{ item.todo }}
+        </span>
+        <input v-if="item.edit" type="text" v-model="item.todo" @blur="item.edit = false" v-focus>
+        <button @click="deleteItem(index)">削除</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
