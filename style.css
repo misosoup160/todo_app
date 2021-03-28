@@ -1,0 +1,52 @@
+body {
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  color: #333; 
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#app h1 {
+  font-size: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#app input[type="text"] {
+  padding: 4px;
+  width: 200px;
+}
+
+#app ul {
+  list-style: none;
+  padding: 0;
+}
+
+#app li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #eee
+}
+
+#app li > span {
+  vertical-align: center;
+  cursor: text;
+  display: inline-block;
+  flex: 1;
+  min-height: 20px;
+  margin: 0 10px;
+}
+
+#app li input[type="text"] {
+  flex: 1;
+  margin: 0 10px;
+}
+
+#app li > span.done {
+  text-decoration: line-through;
+  color: #bbb;
+}
